@@ -26,23 +26,21 @@
         <table class="table table-border table-hover">
             <thead class="table-primary">
             <tr>
-                <th>Nazev</th>
-                <th>Autor</th>
-                <th>Kategorie</th>
-                <th>Rok</th>
-                <th>Cena</th>
-                <th>ISBN</th>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Time</th>
+                <th>Komentar</th>
             </tr>
             </thead>
             <tbody>
             <?php foreach($books as $book) :?> 
                 <tr>
-                <td><?=htmlspecialchars($book['title'])?></td>
-                <td><?=htmlspecialchars($book['author'])?></td>
-                <td><?=htmlspecialchars($book['category'])?></td>
-                <td><?=htmlspecialchars($book['year'])?></td>
-                <td><?=htmlspecialchars($book['price'])?></td>
-                <td><?=htmlspecialchars($book['isbn'])?></td>
+                <td><?=htmlspecialchars($book['id'])?></td>
+                <td><?=htmlspecialchars($book['username'])?></td>
+                <td><?=htmlspecialchars($book['email'])?></td>
+                <td><?=htmlspecialchars($book['created_at'])?></td>
+                <td><?=htmlspecialchars($book['text'])?></td>
             </tr>
             <?php endforeach; ?>
         </tbody>

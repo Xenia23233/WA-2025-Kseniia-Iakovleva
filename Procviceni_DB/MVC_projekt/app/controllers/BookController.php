@@ -14,29 +14,9 @@ class BookController {
 
     public function createBook() {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $title = htmlspecialchars($_POST['title']);
-            $author = htmlspecialchars($_POST['author']);
-            $category = htmlspecialchars($_POST['category']);
-            $subcategory = !empty($_POST['subcategory']) ? htmlspecialchars($_POST['subcategory']) : null;
-            $year = intval($_POST['year']);
-            $price = floatval($_POST['price']);
-            $isbn = htmlspecialchars($_POST['isbn']);
-            $description = htmlspecialchars($_POST['description']);
-            $link = htmlspecialchars($_POST['link']);
-
-            // Zpracování nahraných obrázků
-            $imagePaths = [];
-            if (!empty($_FILES['images']['name'][0])) {
-                $uploadDir = '../public/images/';
-                foreach ($_FILES['images']['tmp_name'] as $key => $tmp_name) {
-                    $filename = basename($_FILES['images']['name'][$key]);
-                    $targetPath = $uploadDir . $filename;
-
-                    if (move_uploaded_file($tmp_name, $targetPath)) {
-                        $imagePaths[] = '/public/images/' . $filename; // Relativní cesta
-                    }
-                }
-            }
+            $username = htmlspecialchars($_POST['username']);
+            $email = htmlspecialchars($_POST['email']);
+            $text = htmlspecialchars($_POST['text']);
 
             // Uložení knihy do DB
             // if ($this->bookModel->create($title, $author, $category, $subcategory, $year, $price, $isbn, $description, $link, $imagePaths)) {
@@ -47,7 +27,7 @@ class BookController {
             // }
 
             // Uložení knihy do DB - dočasné řešení, než budeme mít výpis knih
-            if ($this->bookModel->create($title, $author, $category, $subcategory, $year, $price, $isbn, $description, $link, $imagePaths)) {
+            if ($this->bookModel->create($username, $email, $text)) {
                 header("Location: ../controllers/book_list.php"); //presmerovani na book_list.php
                 exit();
             } else {
