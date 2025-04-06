@@ -7,32 +7,25 @@ class Book {
         $this->db = $db;
     }
 
-    public function create($title, $author, $category, $subcategory, $year, $price, $isbn, $description, $link, $images) {
+    public function create($username, $email, $text) {
         
         // Dvojtečka označuje pojmenovaný parametr => Místo přímých hodnot se používají placeholdery.
         // PDO je pak nahradí skutečnými hodnotami při volání metody execute().
         // Chrání proti SQL injekci (bezpečnější než přímé vložení hodnot).
-        $sql = "INSERT INTO books (title, author, category, subcategory, year, price, isbn, description, link, images) 
-                VALUES (:title, :author, :category, :subcategory, :year, :price, :isbn, :description, :link, :images)";
+        $sql = "INSERT INTO comments (username, email, text) 
+                VALUES (:username, :email, :text)";
         
         $stmt = $this->db->prepare($sql);
         
         return $stmt->execute([
-            ':title' => $title,
-            ':author' => $author,
-            ':category' => $category,
-            ':subcategory' => $subcategory ?: null,
-            ':year' => $year,
-            ':price' => $price,
-            ':isbn' => $isbn,
-            ':description' => $description,
-            ':link' => $link,
-            ':images' => json_encode($images) // Ukládání obrázků jako JSON
+            ':username' => $username,
+            ':email' => $email,
+            ':text' => $text,
         ]);
     }
 
     public function getAll() {
-        $sql="SELECT * FROM books ORDER BY created_at DESC";
+        $sql="SELECT * FROM comments ORDER BY created_at DESC";
         $stmt=$this->db->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
