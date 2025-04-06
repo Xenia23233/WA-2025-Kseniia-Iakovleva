@@ -1,0 +1,59 @@
+/*
+
+selection {
+
+vlastnost1: hodnota;
+vlastnost2: hodnota;
+vlastnost3: hodnota;
+vlastnost4: hodnota;
+
+}
+
+*/
+
+body {
+    background-color: aqua;
+}
+
+h1 {
+    color: rgb(26, 21, 21);
+    font-size: 26px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.page-wrapper {
+    max-width: 80%;
+    margin: 0 auto;
+    background-color: blanchedalmond;
+    padding: 20px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+}
+
+nav a {
+    background-color: blue;
+    color: beige;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+nav a:hover{
+        background-color: black;
+}
+
+.grid-conteiner{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 15px;
+}
+
+.card {
+    background-color: rgb(167, 118, 57);
+    padding: 20px;
+    border-radius: 8px;
+}
