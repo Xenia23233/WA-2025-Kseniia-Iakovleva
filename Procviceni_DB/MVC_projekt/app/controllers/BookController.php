@@ -28,7 +28,7 @@ class BookController {
 
             // Uložení knihy do DB - dočasné řešení, než budeme mít výpis knih
             if ($this->bookModel->create($username, $email, $text)) {
-                header("Location: ../controllers/book_list.php"); //presmerovani na book_list.php
+                header("Location: ../controllers/books_list.php"); //presmerovani na book_list.php
                 exit();
             } else {
                 echo "Chyba při ukládání knihy.";
