@@ -10,30 +10,62 @@ vlastnost4: hodnota;
 }
 
 */
-
-body {
-    background-color: aqua;
-}
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+  body {
+    background: #f9f9f9;
+    padding: 20px;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  header {
+    background: #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .content {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .sidebar {
+    background: #ccc;
+    padding: 20px;
+    width: 150px;
+  }
+  
+  .main {
+    background: #ccc;
+    padding: 20px;
+    flex: 1;
+  }
+  
+  footer {
+    background: #ccc;
+    padding: 20px;
+    margin-top: 20px;
+  }
 
 h1 {
-    color: rgb(26, 21, 21);
-    font-size: 26px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.page-wrapper {
-    max-width: 80%;
-    margin: 0 auto;
-    background-color: blanchedalmond;
-    padding: 20px;
+    text-align: center;
 }
 
 nav ul {
     display: flex;
+    justify-content: center;
     list-style: none;
     gap: 10px;
 }
-
 nav a {
     background-color: blue;
     color: beige;
@@ -41,19 +73,6 @@ nav a {
     padding: 5px;
     border-radius: 5px;
 }
-
 nav a:hover{
-        background-color: black;
-}
-
-.grid-conteiner{
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 15px;
-}
-
-.card {
-    background-color: rgb(167, 118, 57);
-    padding: 20px;
-    border-radius: 8px;
+    background-color: black;
 }
