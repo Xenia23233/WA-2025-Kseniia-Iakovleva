@@ -22,7 +22,7 @@ class RegistrController {
 
             // Uložení knihy do DB - dočasné řešení, než budeme mít výpis knih
             if ($this->registrModel->create($username, $email, $name, $surname, $password_hash)) {
-                header("Location: ../controllers/book_list.php");
+                header("Location: ../controllers/registr_list.php");
                 exit();
             } else {
                 echo "Chyba při ukládání knihy.";

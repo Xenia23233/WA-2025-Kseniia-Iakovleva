@@ -69,12 +69,12 @@
 
                             <div class="mb-3">
                                 <label for="year" class="form-label">Heslo: <span class="text-danger">*</span></label>
-                                <input type="number" id="password_hash" name="password_hash" class="form-control" required>
+                                <input type="text" id="password_hash" name="password_hash" class="form-control" required>
                             </div>
 
                             <div class="mb-3">
                                 <label for="price" class="form-label">Podtverzeni hesla: <span class="text-danger">*</span></label>
-                                <input type="number" id="cheak" name="cheak" class="form-control" step="0.01" required>
+                                <input type="text" id="cheak" name="cheak" class="form-control" required>
                             </div>
 
                             <button type="submit" class="btn btn-success w-100">Registrovat se</button>
