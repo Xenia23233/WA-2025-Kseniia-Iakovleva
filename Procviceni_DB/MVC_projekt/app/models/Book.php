@@ -30,4 +30,33 @@ class Book {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function getById($id) {
+        $sql = "SELECT * FROM comments WHERE id = :id";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute([':id' => $id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function update($username, $email, $text) {
+        $sql = "UPDATE comments 
+                SET username = :username,
+                    email = :email,
+                    text = :text
+                WHERE id = :id";
+    
+        $stmt = $this->db->prepare($sql);
+        return $stmt->execute([
+            ':id' => $id,
+            ':username' => $username,
+            ':email' => $email,
+            ':text' => $text,
+        ]);
+    }
+
+    public function delete($id) {
+        $sql = "DELETE FROM comments WHERE id = :id";
+        $stmt = $this->db->prepare($sql);
+        return $stmt->execute([':id' => $id]);
+    }
 }

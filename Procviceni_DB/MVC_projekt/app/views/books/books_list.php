@@ -63,7 +63,7 @@
         </tbody>
         </table>
         <?php else: ?>
-            <div class="alert alert-info">Zadne knihy nebyla nalezena</div>
+            <div class="alert alert-info">Zadny komentar nebyl nalezen</div>
         <?php endif; ?> 
             
     </div>
