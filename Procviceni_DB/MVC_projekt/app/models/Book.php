@@ -47,7 +47,6 @@ class Book {
     
         $stmt = $this->db->prepare($sql);
         return $stmt->execute([
-            ':id' => $id,
             ':username' => $username,
             ':email' => $email,
             ':text' => $text,
