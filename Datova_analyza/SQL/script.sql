@@ -8,7 +8,7 @@ CREATE TABLE comments (
     comments_id INT AUTO_INCREMENT PRIMARY KEY,
     text TEXT NOT NULL,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    id INT NOT NULL,
+    post_id INT NOT NULL,
     FOREIGN KEY (post_id) REFERENCES posts(id) ON DELETE CASCADE
 );
 

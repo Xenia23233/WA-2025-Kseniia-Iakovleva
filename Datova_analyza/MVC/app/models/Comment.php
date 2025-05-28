@@ -7,18 +7,19 @@ class Comment {
         $this->db = $db;
     }
 
-    public function create($text) {
+    public function create($text, $post_id) {
         
         // Dvojtečka označuje pojmenovaný parametr => Místo přímých hodnot se používají placeholdery.
         // PDO je pak nahradí skutečnými hodnotami při volání metody execute().
         // Chrání proti SQL injekci (bezpečnější než přímé vložení hodnot).
-        $sql = "INSERT INTO comments (text) 
-                VALUES (:text";
+        $sql = "INSERT INTO comments (text, post_id) 
+                VALUES (:text,:post_id)";
         
         $stmt = $this->db->prepare($sql);
         
         return $stmt->execute([
             ':text' => $text,
+            ':post_id' => $post_id
         ]);
     }
 

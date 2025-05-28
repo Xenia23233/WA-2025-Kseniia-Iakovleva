@@ -1,11 +1,3 @@
-<?php
-//session_start();
-
-if (session_status() === PHP_SESSION_NONE) {
-  session_start();
-}
-
-?>
 
 <!DOCTYPE html>
 <html lang="cs">
@@ -53,8 +45,6 @@ if (session_status() === PHP_SESSION_NONE) {
             <?= nl2br(htmlspecialchars($post['content'])) ?>
           <?php endif; ?>
         <?php endforeach; ?>
-      <?php else: ?>
-        <div class="alert alert-info">Žádná kniha nebyla nalezena</div>
       <?php endif; ?>
     </div>
     <br>
@@ -64,25 +54,26 @@ if (session_status() === PHP_SESSION_NONE) {
     </div>
 
     <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header bg-primary text-white text-center">
-                        <h2>Přidat komentář</h2>
-                    </div>
-                    <div class="card-body">
-                        <form action="../controllers/CommentsController.php" method="post" enctype="multipart/form-data">
-                            <div class="mb-3">
-                                <label for="text" class="form-label">Text: <span class="text-danger">*</span></label>
-                                <input type="text" id="text" name="text" class="form-control" required>
-                            </div>
-                            <button type="submit" class="btn btn-success w-100">Uložit</button>
-                        </form>
-                    </div>
-                </div>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header bg-primary text-white text-center">
+              <h2>Přidat komentář</h2>
             </div>
+            <div class="card-body">
+              <form action="../controllers/commentController.php" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                  <input type="hidden" name="post_id" value="1">
+                  <label for="text" class="form-label">Text: <span class="text-danger">*</span></label>
+                  <textarea id="text" name="text" class="form-control" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-success w-100">Uložit</button>
+              </form>
+            </div>
+          </div>
         </div>
-    </div> 
+      </div>
+    </div>
 
     <div class="row mb-2">
       <div class="container">
