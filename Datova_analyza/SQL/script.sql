@@ -4,6 +4,14 @@ CREATE TABLE posts (
     content TEXT NOT NULL,
 );
 
+CREATE TABLE comments (
+    comments_id INT AUTO_INCREMENT PRIMARY KEY,
+    text TEXT NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    id INT NOT NULL,
+    FOREIGN KEY (post_id) REFERENCES posts(id) ON DELETE CASCADE
+);
+
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL UNIQUE,
