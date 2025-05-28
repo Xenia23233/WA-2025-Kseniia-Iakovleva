@@ -14,9 +14,14 @@ class PostController {
         $this->postsModel = new Post($this->db);
     }
 
-    public function listPosts () {
+    public function listPost1 () {
         $posts = $this->postsModel->getAll();
         include '../views/post1.php';
+    }
+
+    public function listPost2 () {
+        $posts = $this->postsModel->getAll();
+        include '../views/post2.php';
     }
 }
 

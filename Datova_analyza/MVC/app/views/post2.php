@@ -1,16 +1,26 @@
+<?php
+//session_start();
+
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="cs">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page</title>
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/public/css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home page</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/public/css/styles.css">
 </head>
 
-<body class="bg-light">
+<div class="bg-light">
   <div class="container mt-5">
     <header
       class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
@@ -21,7 +31,7 @@
       </div>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="index.php" class="nav-link px-2 link-secondary">Blog</a></li>
+        <li><a href="../views/index.php" class="nav-link px-2 link-secondary">Blog</a></li>
       </ul>
 
       <div class="col-md-3 text-end">
@@ -32,29 +42,44 @@
       </div>
     </header>
     <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary"
-         style="background-image: url('../../../assets/pozadi.jpg'); background-size: cover; background-position: center;">
+      style="background-image: url('../../../assets/pozadi.jpg'); background-size: cover; background-position: center;">
     </div>
-  <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary"
-         style="background-image: url('../../../assets/pozadi.jpg'); background-size: cover; background-position: center;">
+    <div class="text-body" style="line-height: 1.7; font-size: 1.1rem;">
+    <?php if (!empty($posts)): ?>
+      <?php foreach ($posts as $post): ?>
+        <?php if (isset($post['id']) && $post['id'] == 2): ?>
+          <h1><?=  htmlspecialchars($post['title']) ?></h1>
+          <br>
+          <?=  nl2br(htmlspecialchars($post['content'])) ?>
+          <?php endif; ?>
+      <?php endforeach; ?>
+    <?php else: ?>
+      <div class="alert alert-info">Žádná kniha nebyla nalezena</div>
+    <?php endif; ?>
+    </div>
+    <br>
+    <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary"
+      style="background-image: url('../../../assets/pozadi.jpg'); background-size: cover; background-position: center;">
     </div>
     <div class="row mb-2">
-    <div class="container">
-      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-        <div class="col-md-4 d-flex align-items-center">
-          <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Kseniia Iakovleva</span>
-        </div>
+      <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <div class="col-md-4 d-flex align-items-center">
+            <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Kseniia Iakovleva</span>
+          </div>
 
-        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-          <li class="ms-3"><a class="text-body-secondary"
-              href="https://www.instagram.com/xeni.i_/?locale=sbdccoin%2Bis%2Bone%2Bof%2Bthe%2Bworld%27s%2Bleading%2Bfinancial%2Bservices%2Bcompanies%2C%2Bwith%2Bbusiness%2Bscope%2Bcovering%2Binvestment%2Bbanking%2C%2Bsecurities%2Btrading%2C%2Basset%2Bmanagement%2C%2Bsecurities%2Bunderwriting%2C%2Bwealth%2Bmanagement%2Band%2Bother%2Bfields.%2BAs%2Bone%2Bof%2Bthe%2Bworld%27s%2Bmost%2Binfluential%2Bfinancial%2Binstitutions%2C%2Bwe%2Bare%2Bcommitted%2Bto%2Bproviding%2Bcustomers%2Bwith%2Bexcellent%2Bfinancial%2Bproducts%2Band%2Bservices%2Bto%2Bsupport%2Band%2Bassist%2Bthem%2Bin%2Bachieving%2Btheir%2Bfinancial%2Bgoals..wdja&hl=en"
-              aria-label="Instagram"><img src="../../../assets/inst.png" alt="Logo" width="60" height="60"></a></li>
-        </ul>
-      </footer>
+          <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-body-secondary"
+                href="https://www.instagram.com/xeni.i_/?locale=sbdccoin%2Bis%2Bone%2Bof%2Bthe%2Bworld%27s%2Bleading%2Bfinancial%2Bservices%2Bcompanies%2C%2Bwith%2Bbusiness%2Bscope%2Bcovering%2Binvestment%2Bbanking%2C%2Bsecurities%2Btrading%2C%2Basset%2Bmanagement%2C%2Bsecurities%2Bunderwriting%2C%2Bwealth%2Bmanagement%2Band%2Bother%2Bfields.%2BAs%2Bone%2Bof%2Bthe%2Bworld%27s%2Bmost%2Binfluential%2Bfinancial%2Binstitutions%2C%2Bwe%2Bare%2Bcommitted%2Bto%2Bproviding%2Bcustomers%2Bwith%2Bexcellent%2Bfinancial%2Bproducts%2Band%2Bservices%2Bto%2Bsupport%2Band%2Bassist%2Bthem%2Bin%2Bachieving%2Btheir%2Bfinancial%2Bgoals..wdja&hl=en"
+                aria-label="Instagram"><img src="../../../assets/inst.png" alt="Logo" width="60" height="60"></a></li>
+          </ul>
+        </footer>
+      </div>
     </div>
   </div>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</div>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

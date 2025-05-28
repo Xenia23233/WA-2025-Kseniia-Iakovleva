@@ -34,6 +34,7 @@
     <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary"
          style="background-image: url('../../../assets/pozadi.jpg'); background-size: cover; background-position: center;">
     </div>
+    <div class="text-body" style="line-height: 1.7; font-size: 1.1rem;">
     <article class="blog-post"> 
     <h2 class="display-5 link-body-emphasis mb-1">Datová Analýza</h2> 
     <p class="blog-post-meta">January 1, 2021 </p> 
@@ -76,7 +77,7 @@
             <div class="mb-1 text-body-secondary">Nov 12</div>
             <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to
               additional content.</p>
-            <a href="post1.php" class="icon-link gap-1 icon-link-hover stretched-link">
+            <a href="../controllers/post1.php" class="icon-link gap-1 icon-link-hover stretched-link">
               Continue reading
               <svg class="bi" aria-hidden="true">
                 <use xlink:href="#chevron-right"></use>
@@ -101,7 +102,7 @@
             <div class="mb-1 text-body-secondary">Nov 11</div>
             <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional
               content.</p>
-            <a href="post2.php" class="icon-link gap-1 icon-link-hover stretched-link">
+            <a href="../controllers/post2.php" class="icon-link gap-1 icon-link-hover stretched-link">
               Continue reading
               <svg class="bi" aria-hidden="true">
                 <use xlink:href="#chevron-right"></use>
@@ -119,7 +120,9 @@
         </div>
       </div>
     </div>
+    </div>
     <div class="container">
+      
       <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
         <div class="col-md-4 d-flex align-items-center">
           <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Kseniia Iakovleva</span>

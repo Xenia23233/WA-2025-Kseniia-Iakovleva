@@ -31,7 +31,7 @@ if (session_status() === PHP_SESSION_NONE) {
       </div>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="index.php" class="nav-link px-2 link-secondary">Blog</a></li>
+        <li><a href="../views/index.php" class="nav-link px-2 link-secondary">Blog</a></li>
       </ul>
 
       <div class="col-md-3 text-end">
@@ -44,17 +44,20 @@ if (session_status() === PHP_SESSION_NONE) {
     <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary"
       style="background-image: url('../../../assets/pozadi.jpg'); background-size: cover; background-position: center;">
     </div>
-    <h2>Výpis</h2>
+    <div class="text-body" style="line-height: 1.7; font-size: 1.1rem;">
     <?php if (!empty($posts)): ?>
       <?php foreach ($posts as $post): ?>
         <?php if (isset($post['id']) && $post['id'] == 1): ?>
-          <?= htmlspecialchars($post['title']) ?>
-          <?= htmlspecialchars($post['content']) ?>
-        <?php endif; ?>
+          <h1><?=  htmlspecialchars($post['title']) ?></h1>
+          <br>
+          <?=  nl2br(htmlspecialchars($post['content'])) ?>
+          <?php endif; ?>
       <?php endforeach; ?>
     <?php else: ?>
       <div class="alert alert-info">Žádná kniha nebyla nalezena</div>
     <?php endif; ?>
+    </div>
+    <br>
     <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary"
       style="background-image: url('../../../assets/pozadi.jpg'); background-size: cover; background-position: center;">
     </div>
