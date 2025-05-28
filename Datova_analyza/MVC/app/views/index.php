@@ -32,9 +32,11 @@
             class="nav-link px-2">Sign-up</a></button>
       </div>
     </header>
+
     <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary"
       style="background-image: url('../../../assets/pozadi.jpg'); background-size: cover; background-position: center;">
     </div>
+
     <div class="text-body" style="line-height: 1.7; font-size: 1.1rem;">
       <article class="blog-post">
         <h2 class="display-5 link-body-emphasis mb-1">Datová Analýza</h2>
@@ -79,9 +81,11 @@
           interpretovat data přináší nejen hlubší porozumění problémům, ale také nové příležitosti pro inovace a růst.
         </p>
       </article>
+
       <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary"
         style="background-image: url('../../../assets/pozadi.jpg'); background-size: cover; background-position: center;">
       </div>
+      
       <div class="row mb-2">
         <div class="col-md-6">
           <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">

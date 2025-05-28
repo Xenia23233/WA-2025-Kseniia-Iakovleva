@@ -45,22 +45,45 @@ if (session_status() === PHP_SESSION_NONE) {
       style="background-image: url('../../../assets/pozadi.jpg'); background-size: cover; background-position: center;">
     </div>
     <div class="text-body" style="line-height: 1.7; font-size: 1.1rem;">
-    <?php if (!empty($posts)): ?>
-      <?php foreach ($posts as $post): ?>
-        <?php if (isset($post['id']) && $post['id'] == 1): ?>
-          <h1><?=  htmlspecialchars($post['title']) ?></h1>
-          <br>
-          <?=  nl2br(htmlspecialchars($post['content'])) ?>
+      <?php if (!empty($posts)): ?>
+        <?php foreach ($posts as $post): ?>
+          <?php if (isset($post['id']) && $post['id'] == 1): ?>
+            <h1><?= htmlspecialchars($post['title']) ?></h1>
+            <br>
+            <?= nl2br(htmlspecialchars($post['content'])) ?>
           <?php endif; ?>
-      <?php endforeach; ?>
-    <?php else: ?>
-      <div class="alert alert-info">Žádná kniha nebyla nalezena</div>
-    <?php endif; ?>
+        <?php endforeach; ?>
+      <?php else: ?>
+        <div class="alert alert-info">Žádná kniha nebyla nalezena</div>
+      <?php endif; ?>
     </div>
     <br>
+
     <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary"
       style="background-image: url('../../../assets/pozadi.jpg'); background-size: cover; background-position: center;">
     </div>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h2>Přidat komentář</h2>
+                    </div>
+                    <div class="card-body">
+                        <form action="../controllers/CommentsController.php" method="post" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label for="text" class="form-label">Text: <span class="text-danger">*</span></label>
+                                <input type="text" id="text" name="text" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">Uložit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+
     <div class="row mb-2">
       <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
