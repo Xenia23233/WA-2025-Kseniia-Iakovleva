@@ -76,7 +76,7 @@
             <div class="mb-1 text-body-secondary">Nov 12</div>
             <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to
               additional content.</p>
-            <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+            <a href="post2.php" class="icon-link gap-1 icon-link-hover stretched-link">
               Continue reading
               <svg class="bi" aria-hidden="true">
                 <use xlink:href="#chevron-right"></use>
@@ -101,7 +101,7 @@
             <div class="mb-1 text-body-secondary">Nov 11</div>
             <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional
               content.</p>
-            <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+            <a href="post2.php" class="icon-link gap-1 icon-link-hover stretched-link">
               Continue reading
               <svg class="bi" aria-hidden="true">
                 <use xlink:href="#chevron-right"></use>

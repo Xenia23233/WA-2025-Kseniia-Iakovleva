@@ -15,19 +15,15 @@
     <div class="container mt-5">
         <header
             class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-            <div class="col-md-3 mb-2 mb-md-0">
-                <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
-                    <img src="../../../../assets/Small Talk.png" alt="Logo" width="60" height="60">
-                </a>
-            </div>
+      <div class="col-md-3 mb-2 mb-md-0">
+        <a href="#" class="d-inline-flex link-body-emphasis text-decoration-none">
+          <img src="../../../assets/Small Talk.png" alt="Logo" width="60" height="60">
+        </a>
+      </div>
 
-            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="index.php" class="nav-link px-2 link-secondary">Home</a></li>
-                <li><a href="#" class="nav-link px-2">Features</a></li>
-                <li><a href="#" class="nav-link px-2">Pricing</a></li>
-                <li><a href="#" class="nav-link px-2">FAQs</a></li>
-                <li><a href="#" class="nav-link px-2">About</a></li>
-            </ul>
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="index.php" class="nav-link px-2 link-secondary">Blog</a></li>
+      </ul>
 
             <div class="col-md-3 text-end">
                 <button type="button" class="btn btn-outline-primary me-2"><a href="#" class="nav-link px-2">Login</a></button>
@@ -68,7 +64,7 @@
                 <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
                     <li class="ms-3"><a class="text-body-secondary"
                             href="https://www.instagram.com/xeni.i_/?locale=sbdccoin%2Bis%2Bone%2Bof%2Bthe%2Bworld%27s%2Bleading%2Bfinancial%2Bservices%2Bcompanies%2C%2Bwith%2Bbusiness%2Bscope%2Bcovering%2Binvestment%2Bbanking%2C%2Bsecurities%2Btrading%2C%2Basset%2Bmanagement%2C%2Bsecurities%2Bunderwriting%2C%2Bwealth%2Bmanagement%2Band%2Bother%2Bfields.%2BAs%2Bone%2Bof%2Bthe%2Bworld%27s%2Bmost%2Binfluential%2Bfinancial%2Binstitutions%2C%2Bwe%2Bare%2Bcommitted%2Bto%2Bproviding%2Bcustomers%2Bwith%2Bexcellent%2Bfinancial%2Bproducts%2Band%2Bservices%2Bto%2Bsupport%2Band%2Bassist%2Bthem%2Bin%2Bachieving%2Btheir%2Bfinancial%2Bgoals..wdja&hl=en"
-                            aria-label="Instagram"><img src="../../../../assets/inst.png" alt="Logo" width="60"
+                            aria-label="Instagram"><img src="../../../assets/inst.png" alt="Logo" width="60"
                                 height="60"></a></li>
                 </ul>
             </footer>
