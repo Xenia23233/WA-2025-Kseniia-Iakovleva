@@ -31,7 +31,7 @@ if (session_status() === PHP_SESSION_NONE) {
       </div>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="../views/index.php" class="nav-link px-2 link-secondary">Blog</a></li>
+        <li><a href="../controllers/index.php" class="nav-link px-2 link-secondary">Blog</a></li>
       </ul>
 
       <div class="col-md-3 text-end">

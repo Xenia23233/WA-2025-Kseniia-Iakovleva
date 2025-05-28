@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="cs">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page</title>
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/public/css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home page</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/public/css/styles.css">
 </head>
 
 <body class="bg-light">
@@ -21,7 +22,7 @@
       </div>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="index.php" class="nav-link px-2 link-secondary">Blog</a></li>
+        <li><a href="../controllers/index.php" class="nav-link px-2 link-secondary">Blog</a></li>
       </ul>
 
       <div class="col-md-3 text-end">
@@ -32,97 +33,108 @@
       </div>
     </header>
     <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary"
-         style="background-image: url('../../../assets/pozadi.jpg'); background-size: cover; background-position: center;">
+      style="background-image: url('../../../assets/pozadi.jpg'); background-size: cover; background-position: center;">
     </div>
     <div class="text-body" style="line-height: 1.7; font-size: 1.1rem;">
-    <article class="blog-post"> 
-    <h2 class="display-5 link-body-emphasis mb-1">Datová Analýza</h2> 
-    <p class="blog-post-meta">January 1, 2021 </p> 
-    <p>V dnešní digitální éře hraje datová analýza klíčovou roli ve všech oblastech podnikání a vědy. S rostoucím množstvím generovaných dat je schopnost tato data efektivně analyzovat a interpretovat neocenitelná. Datová analýza umožňuje organizacím činit informovaná rozhodnutí, optimalizovat procesy a získávat konkurenční výhodu. Tento článek poskytuje úvod do světa datové analýzy a jejího významu v moderním světě.</p> 
-    <h2>Co je Datová Analýza?</h2> 
-    <p>Datová analýza je proces inspekce, čištění, transformace a modelování dat s cílem objevit užitečné informace, vyvozovat závěry a podporovat rozhodování. Může zahrnovat různé techniky od jednoduché statistické analýzy až po pokročilé metody strojového učení a umělé inteligence.</p> 
-    <h2>Hlavní Kroky Datové Analýzy</h2> 
-    <ol> 
-    <li>Sběr Dat: Prvním krokem datového analytika je získání relevantních dat. Data mohou pocházet z různých zdrojů, včetně databází, senzorů, webových stránek, sociálních médií a dalších.</li> 
-    <li>Čištění Dat: Data často obsahují chyby, chybějící hodnoty nebo nesrovnalosti. Čištění dat zahrnuje odstranění nebo opravu těchto problémů, aby byla data připravena pro analýzu.</li> 
-    <li>Transformace Dat: V této fázi jsou data transformována do formátu vhodného pro analýzu. To může zahrnovat normalizaci, agregaci nebo konverzi dat do jiného formátu.</li> 
-    <li>Analýza Dat: Samotná analýza může zahrnovat statistické testy, korelační analýzy, regresní modely, klasifikaci, shlukování a další metody. Cílem analýzy je identifikovat vzory, trendy a vztahy v datech.</li>  
-    <li>Vizualizace Dat: Výsledky analýzy jsou následně prezentovány ve formě grafů, tabulek a dalších vizuálních nástrojů, které usnadňují interpretaci a komunikaci zjištění.</li>
-    <li>Interpretace a Závěry: Posledním krokem je interpretace výsledků analýzy a formulování závěrů, které mohou být použity k podpoře rozhodování.</li>
-  </ol>
-  <h2>Aplikace Datové Analýzy</h2>
-  <p>Datová analýza se uplatňuje v mnoha oblastech, včetně:</p>
-  <div style="display: flex; align-items: flex-start; gap: 20px;">
-  <ul>
-    <li>Obchod: Analýza zákaznického chování, optimalizace dodavatelských řetězců, predikce prodeje.</li>
-    <li>Zdravotnictví: Predikce nemocí, analýza zdravotnických dat, zlepšení léčebných postupů.</li>
-    <li>Finance: Hodnocení rizik, detekce podvodů, investiční analýzy.</li>
-    <li>Marketing: Segmentace trhu, analýza kampaní, personalizace nabídek.</li>
-    <li>Výzkum: Analýza vědeckých dat, statistické testování hypotéz, modelování.</li>
-  </ul>
-  <img src="../../../assets/grafy.png" alt="Ilustrační obrázek" style="width: 500px; border-radius: 10px;">
-  </div>
-  <h2>Závěr</h2>
-  <p>Datová analýza je nezbytná dovednost pro moderní pracovní sílu a podniky. Schopnost efektivně analyzovat a interpretovat data přináší nejen hlubší porozumění problémům, ale také nové příležitosti pro inovace a růst.</p>
-</article>
-<div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary"
-         style="background-image: url('../../../assets/pozadi.jpg'); background-size: cover; background-position: center;">
-    </div>
-    <div class="row mb-2">
-      <div class="col-md-6">
-        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-primary-emphasis">World</strong>
-            <h3 class="mb-0">Featured post</h3>
-            <div class="mb-1 text-body-secondary">Nov 12</div>
-            <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to
-              additional content.</p>
-            <a href="../controllers/post1.php" class="icon-link gap-1 icon-link-hover stretched-link">
-              Continue reading
-              <svg class="bi" aria-hidden="true">
-                <use xlink:href="#chevron-right"></use>
-              </svg>
-            </a>
+      <article class="blog-post">
+        <h2 class="display-5 link-body-emphasis mb-1">Datová Analýza</h2>
+        <p class="blog-post-meta">January 1, 2021 </p>
+        <p>V dnešní digitální éře hraje datová analýza klíčovou roli ve všech oblastech podnikání a vědy. S rostoucím
+          množstvím generovaných dat je schopnost tato data efektivně analyzovat a interpretovat neocenitelná. Datová
+          analýza umožňuje organizacím činit informovaná rozhodnutí, optimalizovat procesy a získávat konkurenční
+          výhodu. Tento článek poskytuje úvod do světa datové analýzy a jejího významu v moderním světě.</p>
+        <h2>Co je Datová Analýza?</h2>
+        <p>Datová analýza je proces inspekce, čištění, transformace a modelování dat s cílem objevit užitečné informace,
+          vyvozovat závěry a podporovat rozhodování. Může zahrnovat různé techniky od jednoduché statistické analýzy až
+          po pokročilé metody strojového učení a umělé inteligence.</p>
+        <h2>Hlavní Kroky Datové Analýzy</h2>
+        <ol>
+          <li>Sběr Dat: Prvním krokem datového analytika je získání relevantních dat. Data mohou pocházet z různých
+            zdrojů, včetně databází, senzorů, webových stránek, sociálních médií a dalších.</li>
+          <li>Čištění Dat: Data často obsahují chyby, chybějící hodnoty nebo nesrovnalosti. Čištění dat zahrnuje
+            odstranění nebo opravu těchto problémů, aby byla data připravena pro analýzu.</li>
+          <li>Transformace Dat: V této fázi jsou data transformována do formátu vhodného pro analýzu. To může zahrnovat
+            normalizaci, agregaci nebo konverzi dat do jiného formátu.</li>
+          <li>Analýza Dat: Samotná analýza může zahrnovat statistické testy, korelační analýzy, regresní modely,
+            klasifikaci, shlukování a další metody. Cílem analýzy je identifikovat vzory, trendy a vztahy v datech.</li>
+          <li>Vizualizace Dat: Výsledky analýzy jsou následně prezentovány ve formě grafů, tabulek a dalších vizuálních
+            nástrojů, které usnadňují interpretaci a komunikaci zjištění.</li>
+          <li>Interpretace a Závěry: Posledním krokem je interpretace výsledků analýzy a formulování závěrů, které mohou
+            být použity k podpoře rozhodování.</li>
+        </ol>
+        <h2>Aplikace Datové Analýzy</h2>
+        <p>Datová analýza se uplatňuje v mnoha oblastech, včetně:</p>
+        <div style="display: flex; align-items: flex-start; gap: 20px;">
+          <ul>
+            <li>Obchod: Analýza zákaznického chování, optimalizace dodavatelských řetězců, predikce prodeje.</li>
+            <li>Zdravotnictví: Predikce nemocí, analýza zdravotnických dat, zlepšení léčebných postupů.</li>
+            <li>Finance: Hodnocení rizik, detekce podvodů, investiční analýzy.</li>
+            <li>Marketing: Segmentace trhu, analýza kampaní, personalizace nabídek.</li>
+            <li>Výzkum: Analýza vědeckých dat, statistické testování hypotéz, modelování.</li>
+          </ul>
+          <img src="../../../assets/grafy.png" alt="Ilustrační obrázek" style="width: 500px; border-radius: 10px;">
+        </div>
+        <h2>Závěr</h2>
+        <p>Datová analýza je nezbytná dovednost pro moderní pracovní sílu a podniky. Schopnost efektivně analyzovat a
+          interpretovat data přináší nejen hlubší porozumění problémům, ale také nové příležitosti pro inovace a růst.
+        </p>
+      </article>
+      <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary"
+        style="background-image: url('../../../assets/pozadi.jpg'); background-size: cover; background-position: center;">
+      </div>
+      <div class="row mb-2">
+        <div class="col-md-6">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <?php if (!empty($posts)): ?>
+                <?php foreach ($posts as $post): ?>
+                  <?php if (isset($post['id']) && $post['id'] == 1): ?>
+                    <h3><?= htmlspecialchars($post['title']) ?></h3>
+                  <?php endif; ?>
+                <?php endforeach; ?>
+              <?php endif; ?>
+              <div class="mb-1 text-body-secondary">Nov 12</div>
+              <a href="../controllers/post1.php" class="icon-link gap-1 icon-link-hover stretched-link">
+                Číst
+                <svg class="bi" aria-hidden="true">
+                  <use xlink:href="#chevron-right"></use>
+                </svg>
+              </a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img class="bd-placeholder-img" width="250" height="250" src="../../../assets/Data.png" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice">
+            </div>
           </div>
-          <div class="col-auto d-none d-lg-block">
-            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img"
-              aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice">
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                dy=".3em">Thumbnail</text>
-            </svg>
+        </div>
+        <div class="col-md-6">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <?php if (!empty($posts)): ?>
+                <?php foreach ($posts as $post): ?>
+                  <?php if (isset($post['id']) && $post['id'] == 2): ?>
+                    <h3><?= htmlspecialchars($post['title']) ?></h3>
+                  <?php endif; ?>
+                <?php endforeach; ?>
+              <?php endif; ?>
+              <div class="mb-1 text-body-secondary">May 11</div>
+              <a href="../controllers/post2.php" class="icon-link gap-1 icon-link-hover stretched-link">
+                Číst
+                <svg class="bi" aria-hidden="true">
+                  <use xlink:href="#chevron-right"></use>
+                </svg>
+              </a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img class="bd-placeholder-img" width="250" height="250" src="../../../assets/analytics.png" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice">
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
-            <h3 class="mb-0">Post title</h3>
-            <div class="mb-1 text-body-secondary">Nov 11</div>
-            <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional
-              content.</p>
-            <a href="../controllers/post2.php" class="icon-link gap-1 icon-link-hover stretched-link">
-              Continue reading
-              <svg class="bi" aria-hidden="true">
-                <use xlink:href="#chevron-right"></use>
-              </svg>
-            </a>
-          </div>
-          <div class="col-auto d-none d-lg-block">
-            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img"
-              aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice">
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                dy=".3em">Thumbnail</text>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
     </div>
     <div class="container">
-      
+
       <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
         <div class="col-md-4 d-flex align-items-center">
           <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Kseniia Iakovleva</span>

@@ -23,6 +23,11 @@ class PostController {
         $posts = $this->postsModel->getAll();
         include '../views/post2.php';
     }
+
+    public function listPosts () {
+        $posts = $this->postsModel->getAll();
+        include '../views/index.php';
+    }
 }
 
 $controller = new PostController();
