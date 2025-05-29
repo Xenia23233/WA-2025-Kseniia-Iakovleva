@@ -76,6 +76,17 @@
       </div>
     </div>
 
+    <div class="text-body" style="line-height: 1.7; font-size: 1.1rem;">
+      <?php if (!empty($comments)): ?>
+        <?php foreach ($comments as $comment): ?>
+          <?php if (isset($comment['post_id']) && $comment['post_id'] == 2): ?>
+            <?= htmlspecialchars($comment['text']) ?>
+            <br>
+          <?php endif; ?>
+        <?php endforeach; ?>
+      <?php endif; ?>
+    </div>
+
     <div class="row mb-2">
       <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">

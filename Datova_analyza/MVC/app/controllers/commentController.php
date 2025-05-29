@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 require_once '../models/Database.php';
 require_once '../models/Comment.php';
@@ -18,17 +17,22 @@ class CommentController
 
     public function createComment()
     {
-        $text = htmlspecialchars($_POST['text']);
-        $post_id = htmlspecialchars($_POST['post_id']);
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $text = htmlspecialchars($_POST['text']);
+            $post_id = htmlspecialchars($_POST['post_id']);
 
-        if ($this->commentModel->create($text, $post_id)) {
-            if ($post_id == 1) {header("Location: post1.php");}
-            else header("Location: post2.php");
-            exit();
-        } else {
-            echo "Chyba při ukládání knihy.";
+            if ($this->commentModel->create($text, $post_id)) {
+                if ($post_id == 1) {
+                    header("Location: post1.php");
+                } else
+                    header("Location: post2.php");
+                exit();
+            } else {
+                echo "Chyba při ukládání.";
+            }
         }
     }
+
 }
 
 // Volání metody při odeslání formuláře

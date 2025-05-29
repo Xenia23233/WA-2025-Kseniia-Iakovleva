@@ -33,9 +33,11 @@
             class="nav-link px-2">Sign-up</a></button>
       </div>
     </header>
+
     <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary"
       style="background-image: url('../../../assets/pozadi.jpg'); background-size: cover; background-position: center;">
     </div>
+
     <div class="text-body" style="line-height: 1.7; font-size: 1.1rem;">
       <?php if (!empty($posts)): ?>
         <?php foreach ($posts as $post): ?>
@@ -47,8 +49,8 @@
         <?php endforeach; ?>
       <?php endif; ?>
     </div>
+    
     <br>
-
     <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary"
       style="background-image: url('../../../assets/pozadi.jpg'); background-size: cover; background-position: center;">
     </div>
@@ -73,6 +75,16 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="text-body" style="line-height: 1.7; font-size: 1.1rem;">
+      <?php if (!empty($comments)): ?>
+        <?php foreach ($comments as $comment): ?>
+          <?php if (isset($comment['post_id']) && $comment['post_id'] == 1): ?>
+            <?= htmlspecialchars($comment['text']) ?>
+          <?php endif; ?>
+        <?php endforeach; ?>
+      <?php endif; ?>
     </div>
 
     <div class="row mb-2">
