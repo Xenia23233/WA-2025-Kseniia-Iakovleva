@@ -21,4 +21,8 @@ CREATE TABLE users (
     role ENUM('user', 'admin') NOT NULL DEFAULT 'user',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
-);
+); 
+
+ALTER TABLE comments
+ADD COLUMN login_user_id INT NOT NULL,
+ADD CONSTRAINT fk_comment_user FOREIGN KEY (login_user_id) REFERENCES users(user_id) ON DELETE CASCADE;
