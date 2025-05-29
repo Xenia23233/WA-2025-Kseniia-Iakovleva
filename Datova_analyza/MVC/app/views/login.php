@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="cs">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/public/css/styles.css">
@@ -15,19 +16,21 @@
     <div class="container mt-5">
         <header
             class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-      <div class="col-md-3 mb-2 mb-md-0">
-        <a href="#" class="d-inline-flex link-body-emphasis text-decoration-none">
-          <img src="../../../assets/Small Talk.png" alt="Logo" width="60" height="60">
-        </a>
-      </div>
+            <div class="col-md-3 mb-2 mb-md-0">
+                <a href="#" class="d-inline-flex link-body-emphasis text-decoration-none">
+                    <img src="../../../assets/Small Talk.png" alt="Logo" width="60" height="60">
+                </a>
+            </div>
 
-      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="index.php" class="nav-link px-2 link-secondary">Blog</a></li>
-      </ul>
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="index.php" class="nav-link px-2 link-secondary">Blog</a></li>
+            </ul>
 
             <div class="col-md-3 text-end">
-                <button type="button" class="btn btn-outline-primary me-2"><a href="#" class="nav-link px-2">Login</a></button>
-                <button type="button" class="btn btn-outline-primary me-2"><a href="registr.php" class="nav-link px-2">Sign-up</a></button>
+                <button type="button" class="btn btn-outline-primary me-2"><a href="../views/login.php"
+                        class="nav-link px-2">Login</a></button>
+                <button type="button" class="btn btn-outline-primary me-2"><a href="../views/register.php"
+                        class="nav-link px-2">Sign-up</a></button>
             </div>
         </header>
 
@@ -38,7 +41,7 @@
                         <h2>Přihlášení uživatele</h2>
                     </div>
                     <div class="card-body">
-                        <form action="../../controllers/login.php" method="post">
+                        <form action="../controllers/login.php" method="post">
                             <div class="mb-3">
                                 <label for="username" class="form-label">Uživatelské jméno:</label>
                                 <input type="text" id="username" name="username" class="form-control" required>

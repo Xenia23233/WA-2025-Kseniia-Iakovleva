@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="cs">
 
@@ -26,7 +28,7 @@
       </ul>
 
       <div class="col-md-3 text-end">
-        <button type="button" class="btn btn-outline-primary me-2"><a href="login.php"
+        <button type="button" class="btn btn-outline-primary me-2"><a href="../views/login.php"
             class="nav-link px-2">Login</a></button>
         <button type="button" class="btn btn-outline-primary me-2"><a href="../views/register.php"
             class="nav-link px-2">Sign-up</a></button>
