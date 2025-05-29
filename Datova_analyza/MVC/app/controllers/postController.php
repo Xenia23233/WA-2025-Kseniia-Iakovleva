@@ -21,7 +21,6 @@ class PostController
 
     public function listPost1()
     {
-        require_once 'commentController.php';
         $comments = $this->commentModel->getAll();
         $posts = $this->postsModel->getAll();
         include '../views/post1.php';

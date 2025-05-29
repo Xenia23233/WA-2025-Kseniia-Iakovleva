@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="cs">
 
@@ -49,7 +48,7 @@
         <?php endforeach; ?>
       <?php endif; ?>
     </div>
-    
+
     <br>
     <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary"
       style="background-image: url('../../../assets/pozadi.jpg'); background-size: cover; background-position: center;">
@@ -82,8 +81,57 @@
         <?php foreach ($comments as $comment): ?>
           <?php if (isset($comment['post_id']) && $comment['post_id'] == 1): ?>
             <?= htmlspecialchars($comment['text']) ?>
-          <?php endif; ?>
-        <?php endforeach; ?>
+            <a href="?edit=<?= $comment['comments_id'] ?>" class="btn btn-sm btn-warning">Upravit</a>
+            <a href="../controllers/comment_delete.php?comments_id=<?= $comment['comments_id'] ?>" class="btn btn-sm btn-danger"
+              onclick="return confirm('Opravdu chcete smazat komentář?');">Smazat</a>
+            <br>
+            <?php
+            require_once '../models/Database.php';
+            require_once '../models/Comment.php';
+
+            $db = (new Database())->getConnection();
+            $commentModel = new Comment($db);
+            $comments = $commentModel->getAll();
+
+            $editMode = false;
+            $commentToEdit = null;
+
+            if (isset($_GET['edit'])) {
+              $editId = (int) $_GET['edit'];
+              $commentToEdit = $commentModel->getById($editId);
+              if ($commentToEdit) {
+                $editMode = true;
+              }
+            }
+            ?>
+            <?php if ($editMode): ?>
+              <div class="row justify-content-center mt-5">
+                <div class="col-md-8">
+                  <div class="card">
+                    <div class="card-header bg-primary text-white text-center">
+                      <h2>Upravit komentář:</h2>
+                    </div>
+                    <div class="card-body">
+                      <form action="../controllers/comment_update.php" method="post">
+                        <input type="hidden" name="comments_id" value="<?= $commentToEdit['comments_id'] ?>">
+                        <div class="mb-3">
+                          <label class="form-label">ID:</label>
+                          <input type="text" class="form-control" value="<?= $commentToEdit['comments_id'] ?>" disabled>
+                        </div>
+                        <div class="mb-3">
+                          <label for="text" class="form-label">Text: <span class="text-danger">*</span></label>
+                          <textarea type="text" id="text" name="text" class="form-control" required
+                            value="<?= htmlspecialchars($commentToEdit['text']) ?>"></textarea>
+                                  </div>
+                <button type="submit" class="btn btn-success w-100">Uložit změny</button>
+                </form>
+                </div>
+                </div>
+                </div>
+                </div>
+            <?php endif; ?>
+        <?php endif; ?>
+                        <?php endforeach; ?>
       <?php endif; ?>
     </div>
 

@@ -24,8 +24,9 @@ class CommentController
             if ($this->commentModel->create($text, $post_id)) {
                 if ($post_id == 1) {
                     header("Location: post1.php");
-                } else
+                } else {
                     header("Location: post2.php");
+                }
                 exit();
             } else {
                 echo "Chyba při ukládání.";

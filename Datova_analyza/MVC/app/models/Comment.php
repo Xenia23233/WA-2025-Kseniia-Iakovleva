@@ -29,4 +29,29 @@ class Comment {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+        public function getById($comments_id) {
+        $sql = "SELECT * FROM comments WHERE comments_id = :comments_id";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute([':comments_id' => $comments_id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function update($comments_id, $text) {
+        $sql = "UPDATE comments 
+                SET text = :text
+                WHERE comments_id = :comments_id";
+    
+        $stmt = $this->db->prepare($sql);
+        return $stmt->execute([
+            ':comments_id' => $comments_id,
+            ':text' => $text
+        ]);
+    }
+
+    public function delete($comments_id) {
+        $sql = "DELETE FROM comments WHERE comments_id = :comments_id";
+        $stmt = $this->db->prepare($sql);
+        return $stmt->execute([':comments_id' => $comments_id]);
+    }
 }
