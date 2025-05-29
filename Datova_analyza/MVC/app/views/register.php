@@ -23,7 +23,7 @@
             </div>
 
             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="index.php" class="nav-link px-2 link-secondary">Blog</a></li>
+                <li><a href="../controllers/index.php" class="nav-link px-2 link-secondary">Blog</a></li>
             </ul>
 
             <div class="col-md-3 text-end">
@@ -41,7 +41,13 @@
                         <h2>Registrace uživatele</h2>
                     </div>
                     <div class="card-body">
-                        <form id="registrationForm" action="../../controllers/register.php" method="post">
+                        <form id="registrationForm" action="../controllers/register.php" method="post">
+
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Jméno (nepovinné):</label>
+                                <input type="text" id="name" name="name" class="form-control">
+                            </div>
+
                             <div class="mb-3">
                                 <label for="username" class="form-label">Uživatelské jméno:</label>
                                 <input type="text" id="username" name="username" class="form-control" required>
@@ -53,21 +59,13 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="name" class="form-label">Jméno (nepovinné):</label>
-                                <input type="text" id="name" name="name" class="form-control">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="surname" class="form-label">Příjmení (nepovinné):</label>
-                                <input type="text" id="surname" name="surname" class="form-control">
-                            </div>
-
-                            <div class="mb-3">
                                 <label for="password" class="form-label">Heslo:</label>
                                 <input type="password" id="password" name="password" class="form-control"
-                                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$"
+                                    
                                     title="Min. 8 znaků, 1 velké písmeno a 1 číslo" required>
-                            </div>
+                            </div> 
+                            
+                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$"
 
                             <div class="mb-3">
                                 <label for="password_confirm" class="form-label">Potvrzení hesla:</label>

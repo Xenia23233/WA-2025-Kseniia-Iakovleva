@@ -8,22 +8,16 @@ class User {
     }
 
     public function existsByUsername($username) {
-        $stmt = $this->db->prepare("SELECT id FROM users WHERE username = ?");
+        $stmt = $this->db->prepare("SELECT user_id FROM users WHERE username = ?");
         $stmt->execute([$username]);
         return $stmt->fetch() !== false;
     }
 
-    public function register($username, $email, $password_hash, $name = null, $surname = null) {
+    public function register($name = null, $username, $email, $password_hash) {
         $stmt = $this->db->prepare("
-            INSERT INTO users (username, email, password_hash, name, surname)
-            VALUES (?, ?, ?, ?, ?)
+            INSERT INTO users (name, username, email, password_hash)
+            VALUES (?, ?, ?, ?)
         ");
-        return $stmt->execute([$username, $email, $password_hash, $name, $surname]);
-    }
-
-    public function findByUsername($username) {
-        $stmt = $this->db->prepare("SELECT * FROM users WHERE username = ?");
-        $stmt->execute([$username]);
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        return $stmt->execute([$name, $username, $email, $password_hash]);
     }
 }

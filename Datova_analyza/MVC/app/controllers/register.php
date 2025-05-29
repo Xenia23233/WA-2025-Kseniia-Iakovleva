@@ -10,10 +10,9 @@ $userModel = new User($db);
 
 // Validace POST dat
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = !empty($_POST['name']) ? trim($_POST['name']) : null;
     $username = trim($_POST['username']);
     $email = !empty($_POST['email']) ? trim($_POST['email']) : null;
-    $name = !empty($_POST['name']) ? trim($_POST['name']) : null;
-    $surname = !empty($_POST['surname']) ? trim($_POST['surname']) : null;
     $password = $_POST['password'];
     $password_confirm = $_POST['password_confirm'];
 
@@ -31,8 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    if ($userModel->register($username, $email, $hashedPassword, $name, $surname)) {
-        header("Location: ../views/auth/login.php");
+    if ($userModel->register($name, $username, $email, $hashedPassword)) {
+        header("Location: ../views/login.php");
         exit();
     } else {
         die('Registrace se nezdařila.');
