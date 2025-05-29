@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="cs">
 
@@ -26,15 +27,24 @@
       </ul>
 
       <div class="col-md-3 text-end">
-        <button type="button" class="btn btn-outline-primary me-2"><a href="../views/login.php"
-            class="nav-link px-2">Login</a></button>
-        <button type="button" class="btn btn-outline-primary me-2"><a href="../views/register.php"
-            class="nav-link px-2">Sign-up</a></button>
+        <?php if (isset($_SESSION['username'])): ?>
+          <button type="button" class="btn btn-outline-primary me-2"><a href="#" class="nav-link px-2">Přihlášen
+              jako: <strong><?= htmlspecialchars($_SESSION['username']) ?></strong></a></button>
+          <button type="button" class="btn btn-outline-primary me-2"><a href="../controllers/logout.php" class="nav-link px-2">Odhlásit
+              se</a></button>
+        <?php else: ?>
+          <button type="button" class="btn btn-outline-primary me-2"><a href="../views/login.php"
+              class="nav-link px-2">Login</a></button>
+          <button type="button" class="btn btn-outline-primary me-2"><a href="../views/register.php"
+              class="nav-link px-2">Sign-up</a></button>
+        <?php endif; ?>
       </div>
     </header>
+
     <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary"
       style="background-image: url('../../../assets/pozadi.jpg'); background-size: cover; background-position: center;">
     </div>
+
     <div class="text-body" style="line-height: 1.7; font-size: 1.1rem;">
       <?php if (!empty($posts)): ?>
         <?php foreach ($posts as $post): ?>

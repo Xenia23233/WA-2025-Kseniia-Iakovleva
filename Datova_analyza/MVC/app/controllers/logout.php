@@ -3,5 +3,5 @@
     session_unset();     // smaže všechny session proměnné
     session_destroy();   // zničí session
 
-    header("Location: book_list.php");
+    header("Location: index.php");
     exit();
