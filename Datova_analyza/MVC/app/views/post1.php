@@ -13,16 +13,16 @@ session_start();
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/public/css/styles.css">
+  <link rel="stylesheet" href="../../../styles/style.css">
 </head>
 
-<div class="bg-light">
+<body class="bg-light">
   <div class="container mt-5">
     <header
       class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
       <div class="col-md-3 mb-2 mb-md-0">
         <a href="#" class="d-inline-flex link-body-emphasis text-decoration-none">
-          <img src="../../../assets/Small Talk.png" alt="Logo" width="60" height="60">
+          <img src="../../../assets/Small_Talk.png" alt="Logo" width="60" height="60">
         </a>
       </div>
 
@@ -51,116 +51,120 @@ session_start();
     </div>
 
     <div class="text-body" style="line-height: 1.7; font-size: 1.1rem;">
-      <?php if (!empty($posts)): ?>
-        <?php foreach ($posts as $post): ?>
-          <?php if (isset($post['id']) && $post['id'] == 1): ?>
-            <h1><?= htmlspecialchars($post['title']) ?></h1>
-            <br>
-            <?= nl2br(htmlspecialchars($post['content'])) ?>
-          <?php endif; ?>
-        <?php endforeach; ?>
-      <?php endif; ?>
+      <article class="blog-post">
+        <?php if (!empty($posts)): ?>
+          <?php foreach ($posts as $post): ?>
+            <?php if (isset($post['id']) && $post['id'] == 1): ?>
+              <h1><?= htmlspecialchars($post['title']) ?></h1>
+              <br>
+              <?= nl2br(htmlspecialchars($post['content'])) ?>
+            <?php endif; ?>
+          <?php endforeach; ?>
+        <?php endif; ?>
+      </article>
     </div>
 
-    <br>
     <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary"
       style="background-image: url('../../../assets/pozadi.jpg'); background-size: cover; background-position: center;">
     </div>
 
-    <?php if (isset($_SESSION['username'])): ?>
-      <div class="container mt-5">
-        <div class="row justify-content-center">
-          <div class="col-md-8">
-            <div class="card">
-              <div class="card-header bg-primary text-white text-center">
-                <h2>Přidat komentář</h2>
-              </div>
-              <div class="card-body">
-                <form action="../controllers/commentController.php" method="post" enctype="multipart/form-data">
-                  <div class="mb-3">
-                    <input type="hidden" name="post_id" value="1">
-                    <label for="text" class="form-label">Text: <span class="text-danger">*</span></label>
-                    <textarea id="text" name="text" class="form-control" rows="3" required></textarea>
-                  </div>
-                  <button type="submit" class="btn btn-success w-100">Uložit</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    <?php endif; ?>
-
     <div class="text-body" style="line-height: 1.7; font-size: 1.1rem;">
-      <?php if (!empty($comments)): ?>
-        <?php foreach ($comments as $comment): ?>
-          <?php if (isset($comment['post_id']) && $comment['post_id'] == 1): ?>
-            <?= htmlspecialchars($comment['text']) ?>
-            <?php if (isset($_SESSION['login_user_id'])): ?>
-
-              <?php
-              $currentUserId = $_SESSION['login_user_id'] ?? null;
-              $isAdmin = ($_SESSION['role'] ?? '') === 'admin';
-              $ownsBook = $currentUserId == $comment['login_user_id'];
-
-              if ($isAdmin || $ownsBook):
-                ?>
-                <a href="?edit=<?= $comment['comments_id'] ?>" class="btn btn-sm btn-warning">Upravit</a>
-                <a href="../controllers/comment_delete.php?comments_id=<?= $comment['comments_id'] ?>"
-                  class="btn btn-sm btn-danger" onclick="return confirm('Opravdu chcete smazat komentář?');">Smazat</a>
-              <?php endif; ?>
-
-            <?php endif; ?>
-            <br>
-          <?php endif; ?>
-        <?php endforeach; ?>
-      <?php endif; ?>
-
-      <?php
-      require_once '../models/Database.php';
-      require_once '../models/Comment.php';
-
-      $db = (new Database())->getConnection();
-      $commentModel = new Comment($db);
-      $comments = $commentModel->getAll();
-
-      $editMode = false;
-      $commentToEdit = null;
-
-      if (isset($_GET['edit'])) {
-        $editId = (int) $_GET['edit'];
-        $commentToEdit = $commentModel->getById($editId);
-        if ($commentToEdit) {
-          $editMode = true;
-        }
-      }
-      ?>
-      <?php if ($editMode): ?>
-        <div class="row justify-content-center mt-5">
-          <div class="col-md-8">
-            <div class="card">
-              <div class="card-header bg-primary text-white text-center">
-                <h2>Upravit komentář:</h2>
-              </div>
-              <div class="card-body">
-                <form action="../controllers/comment_update.php" method="post">
-                  <input type="hidden" name="comments_id" value="<?= $commentToEdit['comments_id'] ?>">
-                  <div class="mb-3">
-                    <label class="form-label">ID:</label>
-                    <input type="text" class="form-control" value="<?= $commentToEdit['comments_id'] ?>" disabled>
+      <article class="blog-post">
+        <?php if (isset($_SESSION['username'])): ?>
+          <div class="container mt-5">
+            <div class="row justify-content-center">
+              <div class="col-md-8">
+                <div class="card">
+                  <div class="card-header bg-primary text-white text-center">
+                    <h2>Přidat komentář</h2>
                   </div>
-                  <div class="mb-3">
-                    <label for="text" class="form-label">Text: <span class="text-danger">*</span></label>
-                    <textarea type="text" id="text" name="text" class="form-control" required
-                      value="<?= htmlspecialchars($commentToEdit['text']) ?>"></textarea>
+                  <div class="card-body">
+                    <form action="../controllers/commentController.php" method="post" enctype="multipart/form-data">
+                      <div class="mb-3">
+                        <input type="hidden" name="post_id" value="1">
+                        <label for="text" class="form-label">Text: <span class="text-danger">*</span></label>
+                        <textarea id="text" name="text" class="form-control" rows="3" required></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-success w-100">Uložit</button>
+                    </form>
                   </div>
-                  <button type="submit" class="btn btn-success w-100">Uložit změny</button>
-                </form>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      <?php endif; ?>
+        <?php endif; ?>
+
+        <div class="text-body" style="line-height: 1.7; font-size: 1.1rem;">
+          <?php if (!empty($comments)): ?>
+            <?php foreach ($comments as $comment): ?>
+              <?php if (isset($comment['post_id']) && $comment['post_id'] == 1): ?>
+                <?= htmlspecialchars($comment['text']) ?>
+                <?php if (isset($_SESSION['login_user_id'])): ?>
+
+                  <?php
+                  $currentUserId = $_SESSION['login_user_id'] ?? null;
+                  $isAdmin = ($_SESSION['role'] ?? '') === 'admin';
+                  $ownsBook = $currentUserId == $comment['login_user_id'];
+
+                  if ($isAdmin || $ownsBook):
+                    ?>
+                    <a href="?edit=<?= $comment['comments_id'] ?>" class="btn btn-sm btn-warning">Upravit</a>
+                    <a href="../controllers/comment_delete.php?comments_id=<?= $comment['comments_id'] ?>"
+                      class="btn btn-sm btn-danger" onclick="return confirm('Opravdu chcete smazat komentář?');">Smazat</a>
+                  <?php endif; ?>
+
+                <?php endif; ?>
+                <br>
+              <?php endif; ?>
+            <?php endforeach; ?>
+          <?php endif; ?>
+
+          <?php
+          require_once '../models/Database.php';
+          require_once '../models/Comment.php';
+
+          $db = (new Database())->getConnection();
+          $commentModel = new Comment($db);
+          $comments = $commentModel->getAll();
+
+          $editMode = false;
+          $commentToEdit = null;
+
+          if (isset($_GET['edit'])) {
+            $editId = (int) $_GET['edit'];
+            $commentToEdit = $commentModel->getById($editId);
+            if ($commentToEdit) {
+              $editMode = true;
+            }
+          }
+          ?>
+          <?php if ($editMode): ?>
+            <div class="row justify-content-center mt-5">
+              <div class="col-md-8">
+                <div class="card">
+                  <div class="card-header bg-primary text-white text-center">
+                    <h2>Upravit komentář:</h2>
+                  </div>
+                  <div class="card-body">
+                    <form action="../controllers/comment_update.php" method="post">
+                      <input type="hidden" name="comments_id" value="<?= $commentToEdit['comments_id'] ?>">
+                      <div class="mb-3">
+                        <label class="form-label">ID:</label>
+                        <input type="text" class="form-control" value="<?= $commentToEdit['comments_id'] ?>" disabled>
+                      </div>
+                      <div class="mb-3">
+                        <label for="text" class="form-label">Text: <span class="text-danger">*</span></label>
+                        <textarea type="text" id="text" name="text" class="form-control" required
+                          value="<?= htmlspecialchars($commentToEdit['text']) ?>"></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-success w-100">Uložit změny</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <?php endif; ?>
+      </article>
     </div>
 
     <div class="row mb-2">
@@ -179,9 +183,8 @@ session_start();
       </div>
     </div>
   </div>
-</div>
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

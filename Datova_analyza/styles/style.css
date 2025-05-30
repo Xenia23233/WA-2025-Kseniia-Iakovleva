@@ -1,0 +1,156 @@
+body {
+  background-color: #f0f0f0; /* nebo třeba #ffffff */
+  background-image: url('../assets/paper.jpg')!important; /* cesta k obrázku */ 
+  background-size: cover; /* přizpůsobí obrázek velikosti stránky */
+  background-repeat: no-repeat; /* nezopakuje obrázek */
+  background-attachment: fixed; /* pozadí se nehýbe při scrollování */
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+/* Logo hover efekt */
+header a:hover img {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* Tlačítka */
+button.btn-outline-primary a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button.btn-outline-primary:hover {
+  background-color: #0d6efd;
+  color: white;
+}
+
+/* Sekce článku */
+article.blog-post {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.075);
+}
+
+/* Nadpisy */
+article.blog-post h2 {
+  margin-top: 2rem;
+  font-weight: 600;
+  color: #000000;
+}
+
+/* Obrázky */
+img {
+  border-radius: 10px;
+}
+
+/* Footer */
+footer {
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+/* Instagram ikona hover */
+footer a img:hover {
+  filter: brightness(1.1);
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+/* Hlavní styl pro tlačítka */
+.btn {
+  border-radius: 30px;
+  padding: 0.5rem 1.2rem;
+  transition: all 0.3s ease-in-out;
+  font-weight: 500;
+}
+
+/* Hover efekty */
+.btn-outline-primary:hover,
+.btn-outline-secondary:hover {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+/* Zvýrazněné tlačítko (např. "Odhlásit se", "Sign-up") */
+.btn-primary {
+  background-color: #5fc3e4;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #084298;
+}
+
+/* Přihlášený uživatel */
+.user-btn {
+  cursor: default;
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  color: #212529;
+  pointer-events: none;
+}
+
+
+
+/* Styl pro obal karty příspěvku */
+.row .border.rounded.overflow-hidden {
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.row .border.rounded.overflow-hidden:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Textová část karty */
+.position-static {
+  padding: 1.5rem;
+}
+
+.position-static h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.position-static .mb-1 {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+/* Odkaz "Číst" */
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  color: #0d6efd;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.icon-link:hover {
+  color: #0a58ca;
+  text-decoration: underline;
+}
+
+/* Obrázek na pravé straně */
+.col-auto img {
+  border-radius: 0 16px 16px 0;
+  object-fit: cover;
+  height: 100%;
+}
+

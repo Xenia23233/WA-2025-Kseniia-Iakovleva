@@ -13,16 +13,16 @@ session_start();
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/public/css/styles.css">
+  <link rel="stylesheet" href="../../../styles/style.css">
 </head>
 
-<div class="bg-light">
+<body class="bg-light">
   <div class="container mt-5">
     <header
       class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
       <div class="col-md-3 mb-2 mb-md-0">
         <a href="#" class="d-inline-flex link-body-emphasis text-decoration-none">
-          <img src="../../../assets/Small Talk.png" alt="Logo" width="60" height="60">
+          <img src="../../../assets/Small_Talk.png" alt="Logo" width="60" height="60">
         </a>
       </div>
 
@@ -177,9 +177,8 @@ session_start();
       </div>
     </div>
   </div>
-</div>
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

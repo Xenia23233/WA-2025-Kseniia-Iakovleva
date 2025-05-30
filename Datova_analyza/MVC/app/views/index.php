@@ -12,7 +12,7 @@ session_start();
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/public/css/styles.css">
+  <link rel="stylesheet" href="../../../styles/style.css">
 </head>
 
 <body class="bg-light">
@@ -21,7 +21,7 @@ session_start();
       class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
       <div class="col-md-3 mb-2 mb-md-0">
         <a href="#" class="d-inline-flex link-body-emphasis text-decoration-none">
-          <img src="../../../assets/Small Talk.png" alt="Logo" width="60" height="60">
+          <img src="../../../assets/Small_Talk.png" alt="Logo" width="60" height="60">
         </a>
       </div>
 
@@ -95,76 +95,74 @@ session_start();
           interpretovat data přináší nejen hlubší porozumění problémům, ale také nové příležitosti pro inovace a růst.
         </p>
       </article>
+    </div>
 
-      <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary"
-        style="background-image: url('../../../assets/pozadi.jpg'); background-size: cover; background-position: center;">
-      </div>
+    <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary"
+      style="background-image: url('../../../assets/pozadi.jpg'); background-size: cover; background-position: center;">
+    </div>
 
-      <div class="row mb-2">
-        <div class="col-md-6">
-          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div class="col p-4 d-flex flex-column position-static">
-              <?php if (!empty($posts)): ?>
-                <?php foreach ($posts as $post): ?>
-                  <?php if (isset($post['id']) && $post['id'] == 1): ?>
-                    <h3><?= htmlspecialchars($post['title']) ?></h3>
-                  <?php endif; ?>
-                <?php endforeach; ?>
-              <?php endif; ?>
-              <div class="mb-1 text-body-secondary">Nov 12</div>
-              <a href="../controllers/post1.php" class="icon-link gap-1 icon-link-hover stretched-link">
-                Číst
-                <svg class="bi" aria-hidden="true">
-                  <use xlink:href="#chevron-right"></use>
-                </svg>
-              </a>
-            </div>
-            <div class="col-auto d-none d-lg-block">
-              <img class="bd-placeholder-img" width="250" height="250" src="../../../assets/Data.png" role="img"
-                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice">
-            </div>
+    <div class="row mb-2">
+      <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <?php if (!empty($posts)): ?>
+              <?php foreach ($posts as $post): ?>
+                <?php if (isset($post['id']) && $post['id'] == 1): ?>
+                  <h3><?= htmlspecialchars($post['title']) ?></h3>
+                <?php endif; ?>
+              <?php endforeach; ?>
+            <?php endif; ?>
+            <div class="mb-1 text-body-secondary">Nov 12</div>
+            <a href="../controllers/post1.php" class="icon-link gap-1 icon-link-hover stretched-link">
+              Číst
+              <svg class="bi" aria-hidden="true">
+                <use xlink:href="#chevron-right"></use>
+              </svg>
+            </a>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img class="bd-placeholder-img" width="250" height="250" src="../../../assets/Data.png" role="img"
+              aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice">
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div class="col p-4 d-flex flex-column position-static">
-              <?php if (!empty($posts)): ?>
-                <?php foreach ($posts as $post): ?>
-                  <?php if (isset($post['id']) && $post['id'] == 2): ?>
-                    <h3><?= htmlspecialchars($post['title']) ?></h3>
-                  <?php endif; ?>
-                <?php endforeach; ?>
-              <?php endif; ?>
-              <div class="mb-1 text-body-secondary">May 11</div>
-              <a href="../controllers/post2.php" class="icon-link gap-1 icon-link-hover stretched-link">
-                Číst
-                <svg class="bi" aria-hidden="true">
-                  <use xlink:href="#chevron-right"></use>
-                </svg>
-              </a>
-            </div>
-            <div class="col-auto d-none d-lg-block">
-              <img class="bd-placeholder-img" width="250" height="250" src="../../../assets/analytics.png" role="img"
-                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice">
-            </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <?php if (!empty($posts)): ?>
+              <?php foreach ($posts as $post): ?>
+                <?php if (isset($post['id']) && $post['id'] == 2): ?>
+                  <h3><?= htmlspecialchars($post['title']) ?></h3>
+                <?php endif; ?>
+              <?php endforeach; ?>
+            <?php endif; ?>
+            <div class="mb-1 text-body-secondary">May 11</div>
+            <a href="../controllers/post2.php" class="icon-link gap-1 icon-link-hover stretched-link">
+              Číst
+              <svg class="bi" aria-hidden="true">
+                <use xlink:href="#chevron-right"></use>
+              </svg>
+            </a>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img class="bd-placeholder-img" width="250" height="250" src="../../../assets/analytics.png" role="img"
+              aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice">
           </div>
         </div>
       </div>
     </div>
-    <div class="container">
 
-      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-        <div class="col-md-4 d-flex align-items-center">
-          <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Kseniia Iakovleva</span>
-        </div>
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <div class="col-md-4 d-flex align-items-center">
+        <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Kseniia Iakovleva</span>
+      </div>
 
-        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-          <li class="ms-3"><a class="text-body-secondary"
-              href="https://www.instagram.com/xeni.i_/?locale=sbdccoin%2Bis%2Bone%2Bof%2Bthe%2Bworld%27s%2Bleading%2Bfinancial%2Bservices%2Bcompanies%2C%2Bwith%2Bbusiness%2Bscope%2Bcovering%2Binvestment%2Bbanking%2C%2Bsecurities%2Btrading%2C%2Basset%2Bmanagement%2C%2Bsecurities%2Bunderwriting%2C%2Bwealth%2Bmanagement%2Band%2Bother%2Bfields.%2BAs%2Bone%2Bof%2Bthe%2Bworld%27s%2Bmost%2Binfluential%2Bfinancial%2Binstitutions%2C%2Bwe%2Bare%2Bcommitted%2Bto%2Bproviding%2Bcustomers%2Bwith%2Bexcellent%2Bfinancial%2Bproducts%2Band%2Bservices%2Bto%2Bsupport%2Band%2Bassist%2Bthem%2Bin%2Bachieving%2Btheir%2Bfinancial%2Bgoals..wdja&hl=en"
-              aria-label="Instagram"><img src="../../../assets/inst.png" alt="Logo" width="60" height="60"></a></li>
-        </ul>
-      </footer>
-    </div>
+      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <li class="ms-3"><a class="text-body-secondary"
+            href="https://www.instagram.com/xeni.i_/?locale=sbdccoin%2Bis%2Bone%2Bof%2Bthe%2Bworld%27s%2Bleading%2Bfinancial%2Bservices%2Bcompanies%2C%2Bwith%2Bbusiness%2Bscope%2Bcovering%2Binvestment%2Bbanking%2C%2Bsecurities%2Btrading%2C%2Basset%2Bmanagement%2C%2Bsecurities%2Bunderwriting%2C%2Bwealth%2Bmanagement%2Band%2Bother%2Bfields.%2BAs%2Bone%2Bof%2Bthe%2Bworld%27s%2Bmost%2Binfluential%2Bfinancial%2Binstitutions%2C%2Bwe%2Bare%2Bcommitted%2Bto%2Bproviding%2Bcustomers%2Bwith%2Bexcellent%2Bfinancial%2Bproducts%2Band%2Bservices%2Bto%2Bsupport%2Band%2Bassist%2Bthem%2Bin%2Bachieving%2Btheir%2Bfinancial%2Bgoals..wdja&hl=en"
+            aria-label="Instagram"><img src="../../../assets/inst.png" alt="Logo" width="60" height="60"></a></li>
+      </ul>
+    </footer>
   </div>
 
   <!-- Bootstrap JS -->
