@@ -71,26 +71,26 @@ session_start();
 
     <?php if (isset($_SESSION['login_user_id'])): ?>
       <div class="container mt-5">
-      <div class="row justify-content-center">
-        <div class="col-md-8">
-          <div class="card">
-            <div class="card-header bg-primary text-white text-center">
-              <h2>Přidat komentář</h2>
-            </div>
-            <div class="card-body">
-              <form action="../controllers/commentController.php" method="post" enctype="multipart/form-data">
-                <div class="mb-3">
-                  <input type="hidden" name="post_id" value="2">
-                  <label for="text" class="form-label">Text: <span class="text-danger">*</span></label>
-                  <textarea id="text" name="text" class="form-control" rows="3" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-success w-100">Uložit</button>
-              </form>
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-header bg-primary text-white text-center">
+                <h2>Přidat komentář</h2>
+              </div>
+              <div class="card-body">
+                <form action="../controllers/commentController.php" method="post" enctype="multipart/form-data">
+                  <div class="mb-3">
+                    <input type="hidden" name="post_id" value="2">
+                    <label for="text" class="form-label">Text: <span class="text-danger">*</span></label>
+                    <textarea id="text" name="text" class="form-control" rows="3" required></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-success w-100">Uložit</button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     <?php endif; ?>
 
     <div class="text-body" style="line-height: 1.7; font-size: 1.1rem;">
@@ -99,9 +99,17 @@ session_start();
           <?php if (isset($comment['post_id']) && $comment['post_id'] == 2): ?>
             <?= htmlspecialchars($comment['text']) ?>
             <?php if (isset($_SESSION['login_user_id'])): ?>
-              <a href="?edit=<?= $comment['comments_id'] ?>" class="btn btn-sm btn-warning">Upravit</a>
-              <a href="../controllers/comment_delete.php?comments_id=<?= $comment['comments_id'] ?>"
-                class="btn btn-sm btn-danger" onclick="return confirm('Opravdu chcete smazat komentář?');">Smazat</a>
+              <?php
+              $currentUserId = $_SESSION['login_user_id'] ?? null;
+              $isAdmin = ($_SESSION['role'] ?? '') === 'admin';
+              $ownsBook = $currentUserId == $comment['login_user_id'];
+
+              if ($isAdmin || $ownsBook):
+                ?>
+                <a href="?edit=<?= $comment['comments_id'] ?>" class="btn btn-sm btn-warning">Upravit</a>
+                <a href="../controllers/comment_delete.php?comments_id=<?= $comment['comments_id'] ?>"
+                  class="btn btn-sm btn-danger" onclick="return confirm('Opravdu chcete smazat komentář?');">Smazat</a>
+              <?php endif; ?>
             <?php endif; ?>
             <br>
           <?php endif; ?>
