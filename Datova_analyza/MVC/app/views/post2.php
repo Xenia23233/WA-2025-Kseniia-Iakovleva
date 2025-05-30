@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="cs">
 
@@ -30,7 +33,8 @@
         <?php if (isset($_SESSION['username'])): ?>
           <button type="button" class="btn btn-outline-primary me-2"><a href="#" class="nav-link px-2">Přihlášen
               jako: <strong><?= htmlspecialchars($_SESSION['username']) ?></strong></a></button>
-          <button type="button" class="btn btn-outline-primary me-2"><a href="../controllers/logout.php" class="nav-link px-2">Odhlásit
+          <button type="button" class="btn btn-outline-primary me-2"><a href="../controllers/logout.php"
+              class="nav-link px-2">Odhlásit
               se</a></button>
         <?php else: ?>
           <button type="button" class="btn btn-outline-primary me-2"><a href="../views/login.php"

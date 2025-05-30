@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="cs">
@@ -31,7 +33,8 @@
         <?php if (isset($_SESSION['username'])): ?>
           <button type="button" class="btn btn-outline-primary me-2"><a href="#" class="nav-link px-2">Přihlášen
               jako: <strong><?= htmlspecialchars($_SESSION['username']) ?></strong></a></button>
-          <button type="button" class="btn btn-outline-primary me-2"><a href="../controllers/logout.php" class="nav-link px-2">Odhlásit
+          <button type="button" class="btn btn-outline-primary me-2"><a href="../controllers/logout.php"
+              class="nav-link px-2">Odhlásit
               se</a></button>
         <?php else: ?>
           <button type="button" class="btn btn-outline-primary me-2"><a href="../views/login.php"
@@ -90,6 +93,8 @@
         <?php foreach ($comments as $comment): ?>
           <?php if (isset($comment['post_id']) && $comment['post_id'] == 1): ?>
             <?= htmlspecialchars($comment['text']) ?>
+            <?php
+            ?>
             <a href="?edit=<?= $comment['comments_id'] ?>" class="btn btn-sm btn-warning">Upravit</a>
             <a href="../controllers/comment_delete.php?comments_id=<?= $comment['comments_id'] ?>"
               class="btn btn-sm btn-danger" onclick="return confirm('Opravdu chcete smazat komentář?');">Smazat</a>
@@ -97,6 +102,7 @@
           <?php endif; ?>
         <?php endforeach; ?>
       <?php endif; ?>
+
       <?php
       require_once '../models/Database.php';
       require_once '../models/Comment.php';

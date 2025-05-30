@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require_once '../models/Database.php';
 require_once '../models/Comment.php';
@@ -17,11 +18,18 @@ class CommentController
 
     public function createComment()
     {
+        // Kontrola, jestli je uživatel přihlášen
+        if (!isset($_SESSION['login_user_id'])) {
+            header("Location: index.php");
+            exit();
+        }
+
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $text = htmlspecialchars($_POST['text']);
             $post_id = htmlspecialchars($_POST['post_id']);
+            $login_user_id = $_SESSION['login_user_id'];
 
-            if ($this->commentModel->create($text, $post_id)) {
+            if ($this->commentModel->create($text, $post_id, $login_user_id)) {
                 if ($post_id == 1) {
                     header("Location: post1.php");
                 } else {
@@ -38,4 +46,7 @@ class CommentController
 
 // Volání metody při odeslání formuláře
 $controller = new CommentController();
-$controller->createComment();
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $controller->createComment();
+}
