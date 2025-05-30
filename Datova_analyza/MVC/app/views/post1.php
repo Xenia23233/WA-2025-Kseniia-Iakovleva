@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -66,6 +67,7 @@ session_start();
       style="background-image: url('../../../assets/pozadi.jpg'); background-size: cover; background-position: center;">
     </div>
 
+    <?php if (isset($_SESSION['username'])): ?>
     <div class="container mt-5">
       <div class="row justify-content-center">
         <div class="col-md-8">
@@ -87,17 +89,18 @@ session_start();
         </div>
       </div>
     </div>
+    <?php endif; ?>
 
     <div class="text-body" style="line-height: 1.7; font-size: 1.1rem;">
       <?php if (!empty($comments)): ?>
         <?php foreach ($comments as $comment): ?>
           <?php if (isset($comment['post_id']) && $comment['post_id'] == 1): ?>
             <?= htmlspecialchars($comment['text']) ?>
-            <?php
-            ?>
+            <?php if (isset($_SESSION['login_user_id'])): ?>
             <a href="?edit=<?= $comment['comments_id'] ?>" class="btn btn-sm btn-warning">Upravit</a>
             <a href="../controllers/comment_delete.php?comments_id=<?= $comment['comments_id'] ?>"
               class="btn btn-sm btn-danger" onclick="return confirm('Opravdu chcete smazat komentář?');">Smazat</a>
+              <?php endif; ?>
             <br>
           <?php endif; ?>
         <?php endforeach; ?>
