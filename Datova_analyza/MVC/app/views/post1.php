@@ -101,7 +101,7 @@ session_start();
             <?php if (isset($comment['post_id']) && $comment['post_id'] == 1): ?>
               <div class="comment-box">
                 <div class="comment-meta">
-                  <span>Uživatel ID: <?= htmlspecialchars($comment['login_user_id']) ?></span>
+                  <span>Uživatel: <?= htmlspecialchars($comment['login_user_id']) ?></span>
                   <span><?= htmlspecialchars($comment['created_at']) ?></span>
                 </div>
                 <div class="comment-text">
@@ -127,53 +127,53 @@ session_start();
             <?php endif; ?>
           <?php endforeach; ?>
         <?php endif; ?>
+      </article>
 
-        <?php
-        require_once '../models/Database.php';
-        require_once '../models/Comment.php';
+      <?php
+      require_once '../models/Database.php';
+      require_once '../models/Comment.php';
 
-        $db = (new Database())->getConnection();
-        $commentModel = new Comment($db);
-        $comments = $commentModel->getAll();
+      $db = (new Database())->getConnection();
+      $commentModel = new Comment($db);
+      $comments = $commentModel->getAll();
 
-        $editMode = false;
-        $commentToEdit = null;
+      $editMode = false;
+      $commentToEdit = null;
 
-        if (isset($_GET['edit'])) {
-          $editId = (int) $_GET['edit'];
-          $commentToEdit = $commentModel->getById($editId);
-          if ($commentToEdit) {
-            $editMode = true;
-          }
+      if (isset($_GET['edit'])) {
+        $editId = (int) $_GET['edit'];
+        $commentToEdit = $commentModel->getById($editId);
+        if ($commentToEdit) {
+          $editMode = true;
         }
-        ?>
-        <?php if ($editMode): ?>
-          <div class="row justify-content-center mt-5">
-            <div class="col-md-8">
-              <div class="card">
-                <div class="card-header bg-primary text-white text-center">
-                  <h2>Upravit komentář:</h2>
-                </div>
-                <div class="card-body">
-                  <form action="../controllers/comment_update.php" method="post">
-                    <input type="hidden" name="comments_id" value="<?= $commentToEdit['comments_id'] ?>">
-                    <div class="mb-3">
-                      <label class="form-label">ID:</label>
-                      <input type="text" class="form-control" value="<?= $commentToEdit['comments_id'] ?>" disabled>
-                    </div>
-                    <div class="mb-3">
-                      <label for="text" class="form-label">Text: <span class="text-danger">*</span></label>
-                      <textarea type="text" id="text" name="text" class="form-control" required
-                        value="<?= htmlspecialchars($commentToEdit['text']) ?>"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-success w-100">Uložit změny</button>
-                  </form>
-                </div>
+      }
+      ?>
+      <?php if ($editMode): ?>
+        <div class="row justify-content-center mt-5">
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-header bg-primary text-white text-center">
+                <h2>Upravit komentář:</h2>
+              </div>
+              <div class="card-body">
+                <form action="../controllers/comment_update.php" method="post">
+                  <input type="hidden" name="comments_id" value="<?= $commentToEdit['comments_id'] ?>">
+                  <div class="mb-3">
+                    <label class="form-label">ID:</label>
+                    <input type="text" class="form-control" value="<?= $commentToEdit['comments_id'] ?>" disabled>
+                  </div>
+                  <div class="mb-3">
+                    <label for="text" class="form-label">Text: <span class="text-danger">*</span></label>
+                    <textarea type="text" id="text" name="text" class="form-control" required
+                      value="<?= htmlspecialchars($commentToEdit['text']) ?>"><?= htmlspecialchars($commentToEdit['text']) ?></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-success w-100">Uložit změny</button>
+                </form>
               </div>
             </div>
           </div>
-        <?php endif; ?>
-      </article>
+        </div>
+      <?php endif; ?>
     </div>
 
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">

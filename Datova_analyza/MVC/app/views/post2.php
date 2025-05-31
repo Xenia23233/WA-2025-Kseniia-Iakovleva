@@ -102,7 +102,7 @@ session_start();
             <?php if (isset($comment['post_id']) && $comment['post_id'] == 2): ?>
               <div class="comment-box">
                 <div class="comment-meta">
-                  <span>Uživatel ID: <?= htmlspecialchars($comment['login_user_id']) ?></span>
+                  <span>Uživatel: <?= htmlspecialchars($comment['login_user_id']) ?></span>
                   <span><?= htmlspecialchars($comment['created_at']) ?></span>
                 </div>
                 <div class="comment-text">
@@ -165,7 +165,7 @@ session_start();
                   <div class="mb-3">
                     <label for="text" class="form-label">Text: <span class="text-danger">*</span></label>
                     <textarea type="text" id="text" name="text" class="form-control" required
-                      value="<?= htmlspecialchars($commentToEdit['text']) ?>"></textarea>
+                      value="<?= htmlspecialchars($commentToEdit['text']) ?>"><?= htmlspecialchars($commentToEdit['text']) ?></textarea>
                   </div>
                   <button type="submit" class="btn btn-success w-100">Uložit změny</button>
                 </form>
