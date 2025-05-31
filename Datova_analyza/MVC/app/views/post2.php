@@ -49,7 +49,7 @@ session_start();
       style="background-image: url('../../../assets/pozadi.jpg'); background-size: cover; background-position: center;">
     </div>
 
-    <div class="text-body" style="line-height: 1.7; font-size: 1.1rem;">
+    <div class="text-body mb-4" style="line-height: 1.7; font-size: 1.1rem;">
       <article class="blog-post">
         <?php if (!empty($posts)): ?>
           <?php foreach ($posts as $post): ?>
@@ -99,7 +99,15 @@ session_start();
           <?php if (!empty($comments)): ?>
             <?php foreach ($comments as $comment): ?>
               <?php if (isset($comment['post_id']) && $comment['post_id'] == 2): ?>
-                <?= htmlspecialchars($comment['text']) ?>
+                <div class="comment-box">
+                  <div class="comment-meta">
+                    <span>Uživatel ID: <?= htmlspecialchars($comment['login_user_id']) ?></span>
+                    <span><?= htmlspecialchars($comment['created_at']) ?></span>
+                  </div>
+                  <div class="comment-text">
+                    <?= nl2br(htmlspecialchars($comment['text'])) ?>
+                  </div>
+                </div>
                 <?php if (isset($_SESSION['login_user_id'])): ?>
                   <?php
                   $currentUserId = $_SESSION['login_user_id'] ?? null;

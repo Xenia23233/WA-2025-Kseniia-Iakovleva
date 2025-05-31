@@ -1,9 +1,14 @@
 body {
-  background-color: #f0f0f0; /* nebo třeba #ffffff */
-  background-image: url('../assets/paper.jpg')!important; /* cesta k obrázku */ 
-  background-size: cover; /* přizpůsobí obrázek velikosti stránky */
-  background-repeat: no-repeat; /* nezopakuje obrázek */
-  background-attachment: fixed; /* pozadí se nehýbe při scrollování */
+  background-color: #f0f0f0;
+  /* nebo třeba #ffffff */
+  background-image: url('../assets/paper.jpg') !important;
+  /* cesta k obrázku */
+  background-size: cover;
+  /* přizpůsobí obrázek velikosti stránky */
+  background-repeat: no-repeat;
+  /* nezopakuje obrázek */
+  background-attachment: fixed;
+  /* pozadí se nehýbe při scrollování */
   font-family: Arial, sans-serif;
 }
 
@@ -27,7 +32,7 @@ button.btn-outline-primary a {
 }
 
 button.btn-outline-primary:hover {
-  background-color: #0d6efd;
+  background-color: #7195cc;
   color: white;
 }
 
@@ -76,7 +81,7 @@ footer a img:hover {
 /* Hover efekty */
 .btn-outline-primary:hover,
 .btn-outline-secondary:hover {
-  background-color: #0d6efd;
+  background-color: #7195cc;
   color: #fff;
 }
 
@@ -149,13 +154,13 @@ button .nav-link {
   align-items: center;
   gap: 6px;
   font-weight: 500;
-  color: #0d6efd;
+  color: #7195cc;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .icon-link:hover {
-  color: #0a58ca;
+  color: #7195cc;
   text-decoration: underline;
 }
 
@@ -166,3 +171,77 @@ button .nav-link {
   height: 100%;
 }
 
+.comment-box {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.comment-meta {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-text {
+  font-size: 1rem;
+  color: #212529;
+  white-space: pre-wrap;
+}
+
+/* Styl pro kartu formuláře */
+.card {
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+/* Hlavička */
+.card-header {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background: linear-gradient(135deg, #7195cc, #6610f2);
+  padding: 1.5rem;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Formulářová pole */
+.form-label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.form-control {
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  border: 1px solid #1d4c7a;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Tlačítko */
+.btn-success {
+  background: linear-gradient(135deg, #5ab66f, #218838);
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
