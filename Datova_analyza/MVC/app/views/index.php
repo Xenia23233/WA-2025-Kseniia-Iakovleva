@@ -20,8 +20,8 @@ session_start();
     <header
       class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
       <div class="col-md-3 mb-2 mb-md-0">
-        <a href="#" class="d-inline-flex link-body-emphasis text-decoration-none">
-          <img src="../../../assets/Small_Talk.png" alt="Logo" width="60" height="60">
+        <a class="d-inline-flex link-body-emphasis text-decoration-none">
+          <img src="../../../assets/Small_Talk.png" alt="Logo" width="100" height="100">
         </a>
       </div>
 
@@ -29,22 +29,20 @@ session_start();
         <li><a href="../controllers/index.php" class="nav-link px-2 link-secondary">Blog</a></li>
       </ul>
 
-      <?php if (isset($_SESSION['username'])): ?>
-        <div class="col-md-3 text-end">
+      <div class="col-md-3 text-end d-flex align-items-center gap-2">
+        <?php if (isset($_SESSION['username'])): ?>
           <button type="button" class="btn btn-outline-primary me-2"><a href="#" class="nav-link px-2">Přihlášen
               jako: <strong><?= htmlspecialchars($_SESSION['username']) ?></strong></a></button>
           <button type="button" class="btn btn-outline-primary me-2"><a href="../controllers/logout.php"
               class="nav-link px-2">Odhlásit
               se</a></button>
-        </div>
-      <?php else: ?>
-        <div class="col-md-3 text-end">
+        <?php else: ?>
           <button type="button" class="btn btn-outline-primary me-2"><a href="../views/login.php"
               class="nav-link px-2">Login</a></button>
           <button type="button" class="btn btn-outline-primary me-2"><a href="../views/register.php"
               class="nav-link px-2">Sign-up</a></button>
-        </div>
-      <?php endif; ?>
+        <?php endif; ?>
+      </div>
     </header>
 
     <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary"

@@ -17,13 +17,13 @@
         <header
             class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
             <div class="col-md-3 mb-2 mb-md-0">
-                <a href="#" class="d-inline-flex link-body-emphasis text-decoration-none">
-                    <img src="../../../assets/Small_Talk.png" alt="Logo" width="60" height="60">
+                <a class="d-inline-flex link-body-emphasis text-decoration-none">
+                    <img src="../../../assets/Small_Talk.png" alt="Logo" width="100" height="100">
                 </a>
             </div>
 
             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="index.php" class="nav-link px-2 link-secondary">Blog</a></li>
+                <li><a href="../controllers/index.php" class="nav-link px-2 link-secondary">Blog</a></li>
             </ul>
 
             <div class="col-md-3 text-end">
@@ -58,6 +58,7 @@
                 </div>
             </div>
         </div>
+
         <div class="container">
             <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
                 <div class="col-md-4 d-flex align-items-center">

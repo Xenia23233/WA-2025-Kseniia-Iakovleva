@@ -100,6 +100,18 @@ footer a img:hover {
 }
 
 
+.nav-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+button .nav-link {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+
 
 /* Styl pro obal karty příspěvku */
 .row .border.rounded.overflow-hidden {

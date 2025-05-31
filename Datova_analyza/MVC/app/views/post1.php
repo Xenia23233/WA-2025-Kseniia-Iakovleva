@@ -9,7 +9,7 @@ session_start();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home page</title>
+  <title>Post1</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -21,8 +21,8 @@ session_start();
     <header
       class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
       <div class="col-md-3 mb-2 mb-md-0">
-        <a href="#" class="d-inline-flex link-body-emphasis text-decoration-none">
-          <img src="../../../assets/Small_Talk.png" alt="Logo" width="60" height="60">
+        <a class="d-inline-flex link-body-emphasis text-decoration-none">
+          <img src="../../../assets/Small_Talk.png" alt="Logo" width="100" height="100">
         </a>
       </div>
 
