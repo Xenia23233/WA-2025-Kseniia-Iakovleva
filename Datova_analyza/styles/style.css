@@ -245,3 +245,34 @@ button .nav-link {
   font-weight: 600;
   transition: background 0.3s ease;
 }
+
+
+
+
+.comment-actions .btn {
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.comment-actions .btn-warning {
+  background-color: #e0b73b;
+  color: #000;
+  border: none;
+}
+
+.comment-actions .btn-warning:hover {
+  background-color: #e0a800;
+  color: white;
+}
+
+.comment-actions .btn-danger {
+  background-color: #b5525c;
+  color: white;
+  border: none;
+}
+
+.comment-actions .btn-danger:hover {
+  background-color: #c82333;
+}

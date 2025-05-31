@@ -117,13 +117,13 @@ session_start();
 
                 if ($isAdmin || $ownsBook):
                   ?>
-                  <a href="?edit=<?= $comment['comments_id'] ?>" class="btn btn-sm btn-warning">Upravit</a>
-                  <a href="../controllers/comment_delete.php?comments_id=<?= $comment['comments_id'] ?>"
-                    class="btn btn-sm btn-danger" onclick="return confirm('Opravdu chcete smazat komentář?');">Smazat</a>
+                  <div class="text-body comment-actions mt-2 d-flex gap-2 mb-4" style="line-height: 1.7; font-size: 1.1rem;">
+                    <a href="?edit=<?= $comment['comments_id'] ?>" class="btn btn-sm btn-warning">Upravit</a>
+                    <a href="../controllers/comment_delete.php?comments_id=<?= $comment['comments_id'] ?>"
+                      class="btn btn-sm btn-danger" onclick="return confirm('Opravdu chcete smazat komentář?');">Smazat</a>
+                  </div>
                 <?php endif; ?>
-
               <?php endif; ?>
-              <br>
             <?php endif; ?>
           <?php endforeach; ?>
         <?php endif; ?>
