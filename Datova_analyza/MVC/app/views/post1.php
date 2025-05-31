@@ -101,7 +101,17 @@ session_start();
             <?php if (isset($comment['post_id']) && $comment['post_id'] == 1): ?>
               <div class="comment-box">
                 <div class="comment-meta">
-                  <span>Uživatel: <?= htmlspecialchars($comment['login_user_id']) ?></span>
+                  <?php
+                  require_once '../models/Database.php';
+                  require_once '../models/User.php';
+
+                  $db = (new Database())->getConnection();
+                  $userModel = new User($db);
+                  ?>
+                  <?php
+                  $username = $userModel->getUsernameById($comment['login_user_id']);
+                  ?>
+                  <span>Uživatel: <?= htmlspecialchars($username) ?></span>
                   <span><?= htmlspecialchars($comment['created_at']) ?></span>
                 </div>
                 <div class="comment-text">

@@ -31,4 +31,13 @@ class User
         $stmt->execute([$username]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    public function getUsernameById($userId)
+    {
+        $stmt = $this->db->prepare("SELECT username FROM users WHERE user_id = ?");
+        $stmt->execute([$userId]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result ? $result['username'] : null;
+    }
+
 }
