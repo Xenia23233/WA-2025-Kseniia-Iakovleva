@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 ?>
 
 <!DOCTYPE html>
@@ -97,6 +99,7 @@ session_start();
 
     <div class="text-body mb-4" style="line-height: 1.7; font-size: 1.1rem;">
       <article class="blog-post">
+        <h1>Komentáři:</h1>
         <?php if (!empty($comments)): ?>
           <?php foreach ($comments as $comment): ?>
             <?php if (isset($comment['post_id']) && $comment['post_id'] == 2): ?>

@@ -61,10 +61,9 @@
                             <div class="mb-3">
                                 <label for="password" class="form-label">Heslo:</label>
                                 <input type="password" id="password" name="password" class="form-control"
+                                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$"
                                     title="Min. 8 znaků, 1 velké písmeno a 1 číslo" required>
                             </div>
-
-                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$"
 
                             <div class="mb-3">
                                 <label for="password_confirm" class="form-label">Potvrzení hesla:</label>
